@@ -1,0 +1,41 @@
+{
+  "name": "capital-metereology",
+  "version": "1.0.0",
+  "description": "Exibe em uma interface gráfica para web as temperaturas das capitais brasileiras através da api da API aberta de condições de tempo do INMET",
+  "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup src",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "Richard Wesley",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.1.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.2",
+    "ts-node": "^10.9.1",
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesleyfreit/Capital-Metereology.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wesleyfreit/Capital-Metereology/issues"
+  },
+  "homepage": "https://github.com/wesleyfreit/Capital-Metereology#readme"
+}

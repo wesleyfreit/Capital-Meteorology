@@ -1,0 +1,30 @@
+<%- include ('partials/header.ejs') %>
+    <main>
+        <%- include ('partials/navbar.ejs') %>
+            <div class="container-md">
+                <hr class="bg-secondary border-primary" />
+                <div class="row">
+                    <div class="col-sm-6 col-xl-3 mb-3">
+                        <div class="card">
+                            <div class="card-header bg-primary-subtle">
+                                <h4>
+                                    <%= metereology.capital %>
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Mínima: <b class="text-info">
+                                        <%= metereology.tempMin %>
+                                    </b></p>
+                                <p>Máxima: <b class="text-danger">
+                                        <%= metereology.tempMax %>
+                                    </b></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <br />
+                </div>
+            </div>
+    </main>
+    <%- include ('partials/footer.ejs') %>

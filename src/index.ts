@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import router from './routes';
+import path from 'path';
 dotenv.config();
 
 const app = express();
@@ -11,7 +12,7 @@ app.use(express.json());
 app.use(router);
 
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 
 app.listen(port, () => {
   console.log(`The server is running on http://localhost:${port}`);

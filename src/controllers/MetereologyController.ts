@@ -42,20 +42,27 @@ export default class MetereologyController {
       const body = metereologyObjectSchema.parse(req.query);
       const request = await axios.get(api.concat(body.date));
       const metereologies = metereologyArraySchema.parse(request.data);
+      res.locals.capital = body.capital;
+      res.locals.date = body.date;
       res.render('result', {
         metereology: metereologyModel(metereologies, body.capital),
       });
     } catch (error: any) {
-      switch (error.response.status) {
-        case 403:
-          res.sendStatus(403);
-          break;
-        case 404:
-          res.sendStatus(404);
-          break;
-        default:
-          res.sendStatus(500);
-          break;
+      if (error.errors) {
+        error.errors[0].code == 'too_small' && res.sendStatus(400)
+      }
+      if (error.response) {
+        switch (error.response.status) {
+          case 403:
+            res.sendStatus(403);
+            break;
+          case 404:
+            res.sendStatus(404);
+            break;
+          default:
+            res.sendStatus(500);
+            break;
+        }
       }
     }
   }

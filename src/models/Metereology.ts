@@ -15,8 +15,8 @@ export const metereologyArraySchema = z.array(
 );
 
 export const metereologyObjectSchema = z.object({
-  capital: z.string(),
-  date: z.string(),
+  capital: z.string().min(1),
+  date: z.string().min(1),
 });
 
 export const capitalsNames = (metereologies: Metereology[]) => {

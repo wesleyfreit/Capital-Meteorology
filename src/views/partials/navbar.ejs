@@ -1,19 +1,71 @@
+<style>
+  @media screen and (max-width: 991.5px) {
+    #form-search {
+      justify-content: end;
+      margin-top: 10px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+   #form-search {
+    flex-direction: column;
+    align-items:end;
+   }
+   #form-search button {
+    padding: 10px 12px;
+   }
+   #form-search input, #form-search select {
+    width: 15rem;
+   }
+  }
+</style>
 <header>
-    <nav class="navbar bg-black bg-opacity-50 border-bottom border-bottom-dark">
-        <div class="container-fluid">
-            <a href="/" class="navbar-brand link-primary d-flex ms-2">INÍCIO</a>
-            <form class="d-flex me-2" role="search" method="get" action="/metereology">
-                <h2 class="form-text me-2 text-center w-100 d-flex align-items-center">BUSCA ESPECÍFICA</h2>
-                <input class="form-control me-2" type="date" name="date" id="date" required>
-                <select name="capital" id="capital" class="form-select me-2 w-auto" required>
-                    <option value="" data-default disabled selected>Selecione uma Capital</option>
-                    <% METEREOLOGIES.map(metereology=> { %>
-                        <option value="<%= metereology.capital %>">
-                            <%= metereology.capital %>
-                        </option>
-                        <% }); %>
-                </select>
-                <button class="btn btn-outline-primary text-secondary-emphasis" type="submit">Buscar</button>
-            </form>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg bg-black bg-opacity-50 border-bottom shadow">
+    <div class="container">
+      <a href="/" class="navbar-brand link-primary d-flex ms-2">INÍCIO</a>
+      <button
+        class="navbar-toggler btn btn-dark"
+        style="box-shadow: none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex gap-2 d-flex ms-auto" id="form-search" role="search" method="get" action="/metereology">
+          <input class="form-control" type="date" name="date" id="date" required />
+          <select name="capital" id="capital" class="form-select" required>
+            <option value="" data-default selected>Selecione uma Capital</option>
+            <% METEREOLOGIES.map(metereology=> { %>
+            <option value="<%= metereology.capital %>" class="option-capital">
+              <%= metereology.capital %>
+            </option>
+            <% }); %>
+          </select>
+          <button
+            title="Buscar"
+            class="btn btn-outline-primary d-flex align-items-center"
+            type="submit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 
+                  1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>

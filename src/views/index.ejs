@@ -1,9 +1,11 @@
-<%- include ('partials/header.ejs', {title: 'Busca'}) %> <%- include ('partials/navbar.ejs') %>
+<%- include ('partials/header.ejs', {title: 'Home'}) %> <%- include ('partials/navbar.ejs') %>
 <main>
-  <div class="container-md">
+  <div class="container">
+    <h4 class="mt-2 text-center w-full"><%= date %></h4>
     <hr class="bg-secondary border-primary" />
-    <div class="row g-0">
-      <div class="card shadow border " style="max-width: 16rem">
+    <ul class="row gap-2 justify-content-center d-flex list-unstyled">
+      <% metereologies.map((metereology)=> { %>
+      <li class="card card-body mb-2 shadow page-link border" style="max-width: 15rem">
         <div class="card-header bg-primary-subtle">
           <h4><%= metereology.capital %></h4>
         </div>
@@ -11,8 +13,9 @@
           <p>Mínima: <b class="text-info"> <%= metereology.tempMin %> </b></p>
           <p>Máxima: <b class="text-danger"> <%= metereology.tempMax %> </b></p>
         </div>
-      </div>
-    </div>
+      </li>
+      <% }); %>
+    </ul>
   </div>
 </main>
 <%- include ('partials/footer.ejs') %>

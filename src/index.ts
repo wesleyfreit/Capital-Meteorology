@@ -7,6 +7,7 @@ dotenv.config();
 const app = express();
 const port = process.env.port || 8080;
 
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(router);

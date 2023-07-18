@@ -9,6 +9,8 @@ FROM node
 WORKDIR /app
 COPY --from=build /app/dist src
 COPY package*.json .
+COPY src/views src/views
+COPY public public
 RUN npm install --only=production
 EXPOSE 8080
 CMD ["node", "src/index.js"]

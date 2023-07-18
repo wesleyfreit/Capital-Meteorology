@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "cpy src/views/**/*.ejs dist/views && rimraf dist/views/src && tsup src/*.ts src/*/*.ts",
+    "build": "tsup src/*.ts src/*/*.ts",
     "start": "node dist/index.js"
   },
   "keywords": [],
@@ -25,8 +25,6 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^20.4.2",
-    "cpy-cli": "^5.0.0",
-    "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
     "tsup": "^7.1.0",
     "tsx": "^3.12.7",

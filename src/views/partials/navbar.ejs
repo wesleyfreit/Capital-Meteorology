@@ -2,12 +2,12 @@
     <nav class="navbar bg-black bg-opacity-50 border-bottom border-bottom-dark">
         <div class="container-fluid">
             <a href="/" class="navbar-brand link-primary d-flex ms-2">INÍCIO</a>
-            <form class="d-flex me-2" role="search" method="post" action="/metereology">
+            <form class="d-flex me-2" role="search" method="get" action="/metereology">
                 <h2 class="form-text me-2 text-center w-100 d-flex align-items-center">BUSCA ESPECÍFICA</h2>
                 <input class="form-control me-2" type="date" name="date" id="date" required>
                 <select name="capital" id="capital" class="form-select me-2 w-auto" required>
                     <option value="" data-default disabled selected>Selecione uma Capital</option>
-                    <% metereologies.map(metereology=> { %>
+                    <% METEREOLOGIES.map(metereology=> { %>
                         <option value="<%= metereology.capital %>">
                             <%= metereology.capital %>
                         </option>

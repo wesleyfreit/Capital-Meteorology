@@ -1,0 +1,19 @@
+@media screen and (max-width: 991.5px) {
+  #form-search {
+    justify-content: end;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 450px) {
+  #form-search {
+    flex-direction: column;
+    align-items: end;
+  }
+  #form-search button {
+    padding: 10px 12px;
+  }
+  #form-search input,
+  #form-search select {
+    width: 15rem;
+  }
+}

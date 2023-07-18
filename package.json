@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "cpy src/views/** dist/views && rimraf dist/views/src && tsup src/*.ts src/*/*.ts",
+    "build": "cpy src/views/**/*.ejs dist/views && rimraf dist/views/src && tsup src/*.ts src/*/*.ts",
     "start": "node dist/index.js"
   },
   "keywords": [],

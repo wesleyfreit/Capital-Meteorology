@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { metereologiesModel, metereologyArraySchema } from '../models/Metereology';
+import { meteorologiesModel, meteorologyArraySchema } from '../models/Meteorology';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import { api } from '../api/api';
@@ -8,8 +8,8 @@ export const setLocals = async (req: Request, res: Response, next: NextFunction)
   try {
     const date = dayjs(new Date()).format('YYYY[-]MM[-]DD');
     const request = await axios.get(api.concat(date));
-    const metereologies = metereologyArraySchema.parse(request.data);
-    res.locals.METEREOLOGIES = metereologiesModel(metereologies);
+    const meteorologies = meteorologyArraySchema.parse(request.data);
+    res.locals.METEOROLOGIES = meteorologiesModel(meteorologies);
     next();
   } catch (error: any) {
     switch (error.response.status) {

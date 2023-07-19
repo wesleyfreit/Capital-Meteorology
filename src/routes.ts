@@ -1,14 +1,14 @@
-import MetereologyController from './controllers/MetereologyController';
+import meteorologyController from './controllers/MeteorologyController';
 import { Router, Request, Response } from 'express';
 import { setLocals } from './middlewares/setLocals';
 
 const router = Router();
-const time = new MetereologyController();
+const time = new meteorologyController();
 
 router.use(setLocals);
 
-router.get('/', (req: Request, res: Response) => res.redirect('/metereologies'));
-router.get('/metereologies', time.list);
-router.get('/metereology', time.find);
+router.get('/', (req: Request, res: Response) => res.redirect('/meteorologies'));
+router.get('/meteorologies', time.list);
+router.get('/meteorology', time.find);
 
 export default router;

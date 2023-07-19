@@ -1,4 +1,4 @@
-if (window.location.pathname == '/metereology') {
+if (window.location.pathname == '/meteorology') {
   const queryParams = new URLSearchParams(window.location.search);
   const date = queryParams.get('date');
   const capital = queryParams.get('capital');

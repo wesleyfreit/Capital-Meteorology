@@ -5,20 +5,20 @@ import ptBr from 'dayjs/locale/pt-br';
 import { api } from '../api/api';
 
 import {
-  metereologyArraySchema,
-  metereologyObjectSchema,
-  metereologiesModel,
-  metereologyModel,
-} from '../models/Metereology';
+  meteorologyArraySchema,
+  meteorologyObjectSchema,
+  meteorologiesModel,
+  meteorologyModel,
+} from '../models/Meteorology';
 
 dayjs.locale(ptBr);
 
-export default class MetereologyController {
+export default class meteorologyController {
   public async list(req: Request, res: Response) {
     try {
       res.render('index', {
         date: dayjs(new Date()).format('DD[ de ]MMMM[, ]YYYY'),
-        metereologies: res.locals.METEREOLOGIES,
+        meteorologies: res.locals.METEOROLOGIES,
       });
     } catch (error: any) {
       return res.sendStatus(500);
@@ -26,11 +26,11 @@ export default class MetereologyController {
   }
   public async find(req: Request, res: Response) {
     try {
-      const body = metereologyObjectSchema.parse(req.query);
+      const body = meteorologyObjectSchema.parse(req.query);
       const request = await axios.get(api.concat(body.date));
-      const metereologies = metereologyArraySchema.parse(request.data);
+      const meteorologies = meteorologyArraySchema.parse(request.data);
       res.render('result', {
-        metereology: metereologyModel(metereologiesModel(metereologies), body.capital),
+        meteorology: meteorologyModel(meteorologiesModel(meteorologies), body.capital),
       });
     } catch (error: any) {
       if (error.errors) {

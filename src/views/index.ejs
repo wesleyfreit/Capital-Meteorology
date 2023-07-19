@@ -4,14 +4,14 @@
     <h4 class="mt-2 text-center w-full"><%= date %></h4>
     <hr class="bg-secondary border-primary" />
     <ul class="row gap-2 justify-content-center d-flex list-unstyled">
-      <% metereologies.map((metereology)=> { %>
+      <% meteorologies.map((meteorology)=> { %>
       <li class="card card-body mb-2 shadow page-link border" style="max-width: 15rem">
         <div class="card-header bg-primary-subtle">
-          <h4><%= metereology.capital %></h4>
+          <h4><%= meteorology.capital %></h4>
         </div>
         <div class="card-body">
-          <p>Mínima: <b class="text-info"> <%= metereology.tempMin %> </b></p>
-          <p>Máxima: <b class="text-danger"> <%= metereology.tempMax %> </b></p>
+          <p>Mínima: <b class="text-info"> <%= meteorology.tempMin %> </b></p>
+          <p>Máxima: <b class="text-danger"> <%= meteorology.tempMax %> </b></p>
         </div>
       </li>
       <% }); %>

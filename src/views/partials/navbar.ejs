@@ -20,14 +20,14 @@
           id="form-search"
           role="search"
           method="get"
-          action="/metereology"
+          action="/meteorology"
         >
           <input class="form-control" type="date" name="date" id="date" required />
           <select name="capital" id="capital" class="form-select" required>
             <option value="" data-default selected>Selecionar Capital</option>
-            <% METEREOLOGIES.map(metereology=> { %>
-            <option value="<%= metereology.capital %>" class="option-capital">
-              <%= metereology.capital %>
+            <% meteorologIES.map(meteorology=> { %>
+            <option value="<%= meteorology.capital %>" class="option-capital">
+              <%= meteorology.capital %>
             </option>
             <% }); %>
           </select>

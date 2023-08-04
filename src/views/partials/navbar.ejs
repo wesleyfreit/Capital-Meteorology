@@ -25,7 +25,7 @@
           <input class="form-control" type="date" name="date" id="date" required />
           <select name="capital" id="capital" class="form-select" required>
             <option value="" data-default selected>Selecionar Capital</option>
-            <% meteorologIES.map(meteorology=> { %>
+            <% METEOROLOGIES.map(meteorology=> { %>
             <option value="<%= meteorology.capital %>" class="option-capital">
               <%= meteorology.capital %>
             </option>
